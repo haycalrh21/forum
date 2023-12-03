@@ -8,7 +8,7 @@
     ],
     "routes": [
       { "handle": "filesystem" },
-      { "src": "/(.*\.(js|css))", "dest": "/public/$1" },
+      { "src": "/(.*\\.(js|css))", "dest": "/public/$1" },
       { "src": "/(.*)", "dest": "/public/index.php" }
     ]
   }
