@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "@inertiajs/react";
-import Posting from "./Posts/Posting";
-import Comment from "./Posts/Comment";
+import Posting from "../Posts/Posting";
+import Comment from "../Posts/Comment";
 import '@/Pages/global.css';
 
 export default function Index({ auth, user, postings }) {

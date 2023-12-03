@@ -21,7 +21,7 @@ use App\Http\Controllers\PostinganController;
 
 
 Route::get('/', function () {
-    return Inertia::render('index');
+    return Inertia::render('home/index');
 });
 
 Route::get('/coba',[PostinganController::class, 'index'])->name('coba');
