@@ -28,7 +28,7 @@ const Comment = ({ closeForm, postId }) => {
       name="comment"
       value={data.comment}
       onChange={(e) => setData("comment", e.target.value)}
-      className="p-2 border border-white rounded"
+      className="p-2 border border-white rounded text-black"
     />
 
     <button

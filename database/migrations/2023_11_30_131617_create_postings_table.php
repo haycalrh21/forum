@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('postings', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
-            $table->string('isi');
+            $table->text('isi');
             $table->unsignedBigInteger('userid');
 
             $table->timestamps();
