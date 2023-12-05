@@ -494,13 +494,16 @@ export default function Index({ auth, user, posting,totalPosts }) {
                     ) : (
                         <p>Tidak ada postingan.</p>
                     )}
-                <div className="pagination">
-                    {Array.from({ length: pageNumbers }, (_, index) => (
-                        <button key={index + 1} onClick={() => paginate(index + 1)}>
-                            {index + 1}
-                        </button>
-                    ))}
-                </div>
+ <div className="pagination-container">
+        <div className="pagination">
+            {Array.from({ length: pageNumbers }, (_, index) => (
+                <button key={index + 1} onClick={() => paginate(index + 1)}>
+                    {index + 1}
+                </button>
+            ))}
+        </div>
+    </div>
+
                 </div>
             </div>
         </div>
