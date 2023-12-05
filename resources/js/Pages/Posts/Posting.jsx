@@ -10,30 +10,20 @@ const Posting = ({ closeForm }) => {
     })
 
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
 
-        const response = await post(route('postingan'));
-
-        if (response.status === 200) {
-            console.log('Posting successful');
-            // Reset form data or close the form as needed
-            setData({
-                judul: "",
-                isi: "",
-
-            });
+        post("/postingan", data, {
+          onSuccess: () => {
             closeForm();
-        } else {
-            console.log('Posting failed');
-            // Tambahan: Tampilkan pesan kesalahan atau tindakan lain jika diperlukan
-        }
-    }
+          },
+        });
+      };
 
 
 
     return (
-        <div>
+        <div className="bg-cyan-900 text-white">
             <div>
                 <h1>Mulai Posting</h1>
             </div>
@@ -43,6 +33,8 @@ const Posting = ({ closeForm }) => {
         <div style={{ marginBottom: "10px" }}>
             <label style={{ display: "block", marginBottom: "5px" }}>Judul Posting:</label>
             <input
+                className="text-black"
+
                 type="text"
                 name="judul"
                 value={data.judul}
@@ -53,6 +45,8 @@ const Posting = ({ closeForm }) => {
         <div style={{ marginBottom: "10px" }}>
             <label style={{ display: "block", marginBottom: "5px" }}>Isi Postingan:</label>
             <textarea
+              className="text-black"
+
                 name="isi"
                 value={data.isi}
                 onChange={(e) => setData("isi", e.target.value)}

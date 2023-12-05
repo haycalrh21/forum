@@ -8,17 +8,17 @@
     border-radius: 8px;
     padding: 10px;
     margin: 10px;
-    width: 300px;
+    width: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
 
 
-  .truncate-text {
+  /* .truncate-text {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
-}
+} */
 
 

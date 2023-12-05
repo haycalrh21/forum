@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Inertia\Inertia;
 use App\Models\Posting;
+use App\Models\Komentar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -42,7 +43,28 @@ class PostinganController extends Controller
 
         // dd(Posting);
 
-        return Inertia::location(route('posting'));
+        return Inertia::location('/');
+    }
+    public function delete($id)
+    {
+
+        $post = Posting::findOrFail($id);
+
+        // Delete associated komentars records
+        $post->komentars()->delete();
+
+        // Delete the post
+        $post->delete();
+
+            if(!$post){
+                return redirect()->back()->with('error', 'Data not found.');
+            }
+
+
+
+
+
     }
 
 }
+
