@@ -1,0 +1,14 @@
+{
+    "routes": [
+      {
+        "src": "/resources/.*",
+        "dest": "/resources/$1",
+        "status": 200
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/index.php",
+        "status": 200
+      }
+    ]
+  }
