@@ -1,5 +1,6 @@
 import './bootstrap';
 import '../css/app.css';
+import Index from './Pages/home/index'
 
 import { createRoot } from 'react-dom/client';
 import { createInertiaApp } from '@inertiajs/react';
@@ -12,7 +13,7 @@ createInertiaApp({
     resolve: (name) => resolvePageComponent(`./Pages/${name}.jsx`, import.meta.glob('./**/**/**.jsx')),
     setup({ el, App, props }) {
         const root = createRoot(el);
-
+<Index/>
         root.render(<App {...props} />);
     },
     progress: {
