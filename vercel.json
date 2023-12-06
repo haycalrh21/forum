@@ -1,13 +1,13 @@
 {
     "routes": [
       {
-        "src": "/resources/.*",
-        "dest": "/resources/$1",
+        "src": "/js/(.*)",
+        "dest": "/resources/js/$1",
         "status": 200
       },
       {
         "src": "/(.*)",
-        "dest": "/index.html",
+        "dest": "/public/$1",
         "status": 200
       }
     ]
